@@ -1,6 +1,7 @@
 from pages.product_page import PageObject
 from pages.product_page import ProductPage
 from pages.login_page import LoginPage
+from pages.basket_page import BasketPage
 import pytest
 import time
 
@@ -58,7 +59,6 @@ def test_guest_should_see_login_link_on_product_page(browser):
     page = ProductPage(browser, link)
     page.open()
     page.should_be_login_link()
-    time.sleep(3)
 
 
 @pytest.mark.webtest
@@ -68,4 +68,12 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     page.open()
     page.go_to_login_page()
     page.should_be_login_page()
-    time.sleep(3)
+
+
+@pytest.mark.new
+def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
+    link = 'https://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/'
+    page = BasketPage(browser, link)
+    page.open()
+    page.go_to_cart_page()
+    page.all_tests()

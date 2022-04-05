@@ -11,6 +11,9 @@ class LoginPageLocators:
 
 
 class Basket:
+    ITEMS_TO_BUY_NOW = (By.CSS_SELECTOR, '#content_inner > div.basket-title.hidden-xs > div > h2')
+    BASKET_IS_EMPTY = (By.CSS_SELECTOR, '#content_inner > p')
+    CART_PAGE = (By.CSS_SELECTOR, 'div[class="basket-mini pull-right hidden-xs"] >span > a')
     CART_BUTTON = (By.CSS_SELECTOR, '#add_to_basket_form > button')
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, '#messages > div:nth-child(2) > div')
     ADD_NAME = (By.CSS_SELECTOR, 'article>div:nth-child(1)>div:nth-child(2) h1')

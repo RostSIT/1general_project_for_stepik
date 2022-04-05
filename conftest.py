@@ -8,7 +8,7 @@ def pytest_addoption(parser):
     В командную строку передается параметр вида '--language="es"'
     По умолчанию передается параметр, включающий английский интерфейс в браузере
     """
-    parser.addoption('--language', action='store', default='en', help='Choose language')
+    parser.addoption('--language', action='store', default='en-gb', help='Choose language')
 
 
 @pytest.fixture(scope='function')
