@@ -30,3 +30,4 @@ class BasePageLocators:
     PASSWORD = (By.CSS_SELECTOR, " #id_registration-password1")
     CONFIRM_PASSWORD = (By.CSS_SELECTOR, "input[type='password'][name='registration-password2']")
     REGISTRATION_SUBMIT = (By.CSS_SELECTOR, '[name = "registration_submit"]')
+
