@@ -25,3 +25,8 @@ class Basket:
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+    MAIL_ADDRESS = (By.CSS_SELECTOR, "#id_registration-email")
+    PASSWORD = (By.CSS_SELECTOR, " #id_registration-password1")
+    CONFIRM_PASSWORD = (By.CSS_SELECTOR, "input[type='password'][name='registration-password2']")
+    REGISTRATION_SUBMIT = (By.CSS_SELECTOR, '[name = "registration_submit"]')

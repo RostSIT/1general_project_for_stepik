@@ -37,13 +37,25 @@ class PageObject(BasePage):
         assert add_price.text == in_price.text, 'Different prices'
 
     def guest_cant_see_success_message_after_adding_product_to_basket(self):
-        # assert self.is_element_present(*Basket.SUCCESS_MESSAGE), "1The success message is not presented."
-        assert self.is_not_element_present(*Basket.SUCCESS_MESSAGE), "1Success message is presented."
+        assert self.is_not_element_present(
+            *Basket.SUCCESS_MESSAGE), "Success message after adding product to basket is presented."
+
+        # негативный assert закоментирован для прохода всего теста
+        # assert self.is_element_present(
+        #     *Basket.SUCCESS_MESSAGE), "The success message after adding product to basket " \
+        #                               "is not presented."
 
     def guest_cant_see_success_message(self):
-        # assert self.is_element_present(*Basket.SUCCESS_MESSAGE), "2The success message is not presented."
-        assert self.is_not_element_present(*Basket.SUCCESS_MESSAGE), "2Success message is presented."
+        assert self.is_not_element_present(*Basket.SUCCESS_MESSAGE), "Success message is presented."
+
+        # негативный assert закоментирован для прохода всего теста
+        # assert self.is_element_present(*Basket.SUCCESS_MESSAGE), "The success message is not presented."
 
     def message_disappeared_after_adding_product_to_basket(self):
-        # assert self.is_element_present(*Basket.SUCCESS_MESSAGE), "3The success message is not presented."
-        assert self.is_disappeared(*Basket.SUCCESS_MESSAGE), "3Success message is presented."
+        assert self.is_disappeared(
+            *Basket.SUCCESS_MESSAGE), "Success message disappeared after adding product to basket is presented."
+
+        # негативный assert закоментирован для прохода всего теста
+        # assert self.is_element_present(
+        #     *Basket.SUCCESS_MESSAGE), "The success message disappeared after adding product to basket is" \
+        #                               "is not presented."
