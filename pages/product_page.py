@@ -59,3 +59,4 @@ class PageObject(BasePage):
         # assert self.is_element_present(
         #     *Basket.SUCCESS_MESSAGE), "The success message disappeared after adding product to basket is" \
         #                               "is not presented."
+
