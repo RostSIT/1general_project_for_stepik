@@ -1,6 +1,5 @@
 import pytest
 import faker
-from random import choice
 
 from .pages.product_page import PageObject
 from .pages.product_page import ProductPage
