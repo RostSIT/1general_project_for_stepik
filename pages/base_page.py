@@ -3,8 +3,8 @@ from selenium.common.exceptions import NoAlertPresentException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-from pages.locators import BasePageLocators
-from pages.locators import Basket
+from .locators import BasePageLocators
+from .locators import Basket
 import math
 
 
@@ -14,22 +14,21 @@ class BasePage:
         self.url = url
         self.browser.implicitly_wait(timeout)
 
-    def should_be_login_link(self):
-        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
+    def open(self):
+        self.browser.get(self.url)
 
     def should_be_authorized_user(self):
         assert self.is_element_present(
             *BasePageLocators.USER_ICON), "User icon is not presented, probably unauthorised user"
+
+    def should_be_login_link(self):
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
     def go_to_login_page(self):
         self.cart_button_click(*BasePageLocators.LOGIN_LINK)
 
     def go_to_cart_page(self):
         self.cart_button_click(*Basket.CART_PAGE)
-
-
-    def open(self):
-        self.browser.get(self.url)
 
     def cart_button_click(self, how, what):
         self.browser.find_element(how, what).click()
@@ -69,4 +68,3 @@ class BasePage:
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
-
